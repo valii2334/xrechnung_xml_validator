@@ -34,7 +34,7 @@ RSpec.describe XrechnungXmlValidator::FileValidator do
         let(:ext) { 'xml' }
 
         it 'does not raises XRechnungValidator::InvalidFileFormat' do
-          expect { subject }.to_not raise_error(XrechnungXmlValidator::InvalidFileFormat, error_message)
+          expect { subject }.to_not raise_error
         end
       end
 
