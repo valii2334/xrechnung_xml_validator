@@ -9,7 +9,7 @@ module XrechnungXmlValidator
       @output_directory = output_directory
     end
 
-    def validate!
+    def validate_and_create_report!
       raise_xrechnung_error unless valid_xrechnung_xml?
     end
 

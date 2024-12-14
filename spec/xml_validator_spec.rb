@@ -4,9 +4,9 @@ require 'spec_helper'
 require 'pry'
 
 RSpec.describe XrechnungXmlValidator::XmlValidator do
-  describe 'validate!' do
+  describe 'validate_and_create_report!' do
     subject do
-      described_class.new(absolute_path:, output_directory:).validate!
+      described_class.new(absolute_path:, output_directory:).validate_and_create_report!
     end
 
     context 'xml is valid' do
