@@ -4,11 +4,11 @@ require 'spec_helper'
 
 RSpec.describe XrechnungXmlValidator::FileValidator do
   let(:ext)           { 'mp3' }
-  let(:absolute_path) { Faker::File.file_name(dir: 'random/path', ext: ext) }
+  let(:absolute_path) { Faker::File.file_name(dir: 'random/path', ext:) }
 
-  context 'validate!' do
+  describe 'validate!' do
     subject do
-      described_class.new(absolute_path: absolute_path).validate!
+      described_class.new(absolute_path:).validate!
     end
 
     context 'file is not found' do

@@ -27,6 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "faker"
+  spec.add_development_dependency "pry"
 
   spec.required_ruby_version = Gem::Requirement.new(">= 3.2.0")
 end
