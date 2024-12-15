@@ -15,11 +15,14 @@ gem 'xrechnung_xml_validator'
 
 And then execute:
 
-    $ bundle
+  $ bundle
 
 Or install it yourself as:
 
-    $ gem install xrechnung_xml_validator
+  $ gem install xrechnung_xml_validator
+
+Inside the project create a new directory xrechnung_validator and put the content
+from https://github.com/itplr-kosit/validator-configuration-xrechnung/blob/master/docs/usage.md
 
 ## Usage
 
