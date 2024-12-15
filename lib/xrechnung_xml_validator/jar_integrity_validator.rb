@@ -2,7 +2,7 @@
 
 module XrechnungXmlValidator
   class JarIntegrityValidator
-    VALIDATION_JAR_SHA256_CHECKSUM = '901ef26ddb697687f9c322ddd79e3120ab368da31c04b30c6d0da64f50ad2f40'
+    VALIDATION_JAR_SHA256_CHECKSUM = '901ef26ddb697687f9c322ddd79e3120ab368da31c04b30c6d0da64f50ad2f40'.freeze
 
     class << self
       def validate!
