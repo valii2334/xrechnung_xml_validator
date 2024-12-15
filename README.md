@@ -5,7 +5,8 @@ in order to check that a XRechnung XML file is valid.
 
 At this moment we check against XRechnung 3.0.2 rules released in 2024-10-31.
 
-Only this version is supported because we calculate the SHA256 Checksum of the JAR file.
+Only this version is supported because we calculate the SHA256 Checksum of the JAR file
+and we compare it to the saved value from `VALIDATION_JAR_SHA256_CHECKSUM`.
 
 ## Installation
 
