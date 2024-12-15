@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Validate XRechnung XML file."
   spec.description   = "Validate XRechnung XML file using itplr-kosit"
-  spec.homepage      = "https://rubygems.org/gems/xrechnung_validator"
+  spec.homepage      = "https://github.com/valii2334/xrechnung_xml_validator"
   spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.

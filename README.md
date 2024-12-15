@@ -1,8 +1,9 @@
 # XrechnungXmlValidator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/xrechnung_xml_validator`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem uses the Java validator from https://github.com/itplr-kosit/validator-configuration-xrechnung
+in order to check that a XRechnung XML file is valid.
 
-TODO: Delete this and the text above, and describe your gem
+At this moment we check against XRechnung 3.0.2 rules released in 2024-10-31.
 
 ## Installation
 
@@ -22,7 +23,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+absolute_xml_path              = <THE LOCATION OF XRECHNUNG XML FILE>
+absolute_output_directory_path = <THE OUTPUT DIRECTORY FOR THE HTML REPORT>
+
+# The HTML report will have the following name: XML_FILE_NAME-report.html
+
+begin
+  XrechnungXmlValidator::Validate
+    .new(absolute_xml_path:, absolute_output_directory_path:)
+    .run!
+rescue XrechnungXmlValidator::InvalidXrechnung => e
+  # Provided XRechnung is not valid.
+end
+
+```
 
 ## Development
 
