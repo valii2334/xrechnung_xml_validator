@@ -24,8 +24,8 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-absolute_xml_path              = <THE LOCATION OF XRECHNUNG XML FILE>
-absolute_output_directory_path = <THE OUTPUT DIRECTORY FOR THE HTML REPORT>
+absolute_xml_path              = # XRechnung XML absolute file location
+absolute_output_directory_path = # Absolute directory path for the html report
 
 # The HTML report will have the following name: XML_FILE_NAME-report.html
 
@@ -47,7 +47,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/xrechnung_xml_validator. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/valii2334/xrechnung_xml_validator. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
