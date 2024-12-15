@@ -16,8 +16,8 @@ module XrechnungXmlValidator
     attr_reader :absolute_xml_path, :absolute_output_directory_path
 
     def initialize(absolute_xml_path:, absolute_output_directory_path:)
-      @absolute_xml_path              = absolute_xml_path
-      @absolute_output_directory_path = absolute_output_directory_path
+      @absolute_xml_path              = absolute_xml_path.to_s
+      @absolute_output_directory_path = absolute_output_directory_path.to_s
     end
 
     def run!
