@@ -5,11 +5,11 @@ require 'spec_helper'
 RSpec.describe XrechnungXmlValidator::XmlValidator do
   describe 'validate_and_create_report!' do
     subject do
-      described_class.new(absolute_path:, output_directory:).validate_and_create_report!
+      described_class.new(absolute_xml_path:, absolute_output_directory_path:).validate_and_create_report!
     end
 
     context 'xml is valid' do
-      let(:absolute_path) { absolute_path_valid_xml }
+      let(:absolute_xml_path) { absolute_path_valid_xml }
 
       it 'creates html report' do
         subject
@@ -19,7 +19,7 @@ RSpec.describe XrechnungXmlValidator::XmlValidator do
     end
 
     context 'xml is not valid' do
-      let(:absolute_path) { absolute_path_invalid_xml }
+      let(:absolute_xml_path) { absolute_path_invalid_xml }
 
       it 'creates html report' do
         expect { subject }.to raise_error(XrechnungXmlValidator::InvalidXrechnung)
@@ -45,7 +45,7 @@ RSpec.describe XrechnungXmlValidator::XmlValidator do
     [XrechnungXmlValidator::FilePaths.pwd, 'spec/support/xmls/invalid.xml'].join('/')
   end
 
-  def output_directory
+  def absolute_output_directory_path
     [XrechnungXmlValidator::FilePaths.pwd, 'spec/support'].join('/')
   end
 end

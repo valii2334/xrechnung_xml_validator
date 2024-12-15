@@ -26,11 +26,11 @@ RSpec.describe XrechnungXmlValidator::Validate do
 
       allow(XrechnungXmlValidator::FileValidator)
         .to receive(:new)
-        .with(absolute_path: absolute_xml_path).and_return(file_validator_double)
+        .with(absolute_xml_path:).and_return(file_validator_double)
 
       allow(XrechnungXmlValidator::XmlValidator)
         .to receive(:new)
-        .with(absolute_path: absolute_xml_path, output_directory: absolute_output_directory_path)
+        .with(absolute_xml_path:, absolute_output_directory_path:)
         .and_return(xml_validator_double)
     end
 
@@ -40,11 +40,11 @@ RSpec.describe XrechnungXmlValidator::Validate do
 
       expect(XrechnungXmlValidator::FileValidator)
         .to receive(:new)
-        .with(absolute_path: absolute_xml_path)
+        .with(absolute_xml_path:)
 
       expect(XrechnungXmlValidator::XmlValidator)
         .to receive(:new)
-        .with(absolute_path: absolute_xml_path, output_directory: absolute_output_directory_path)
+        .with(absolute_xml_path:, absolute_output_directory_path:)
 
       subject
     end

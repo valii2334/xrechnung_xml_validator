@@ -22,13 +22,9 @@ module XrechnungXmlValidator
 
     def run!
       XrechnungXmlValidator::JarIntegrityValidator.validate!
-      XrechnungXmlValidator::FileValidator
-        .new(absolute_path: absolute_xml_path).validate!
-      XrechnungXmlValidator::XmlValidator
-        .new(
-          absolute_path: absolute_xml_path,
-          output_directory: absolute_output_directory_path
-        ).validate_and_create_report!
+      XrechnungXmlValidator::FileValidator.new(absolute_xml_path:).validate!
+      XrechnungXmlValidator::XmlValidator.new(absolute_xml_path:,
+                                              absolute_output_directory_path:).validate_and_create_report!
     end
   end
 end

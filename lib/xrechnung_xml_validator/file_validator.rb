@@ -2,12 +2,12 @@
 
 module XrechnungXmlValidator
   class FileValidator
-    attr_reader :absolute_path
+    attr_reader :absolute_xml_path
 
     VALID_FORMATS = ['.xml'].freeze
 
-    def initialize(absolute_path:)
-      @absolute_path = absolute_path
+    def initialize(absolute_xml_path:)
+      @absolute_xml_path = absolute_xml_path
     end
 
     def validate!
@@ -18,11 +18,11 @@ module XrechnungXmlValidator
     private
 
     def file_exist?
-      File.exist?(absolute_path)
+      File.exist?(absolute_xml_path)
     end
 
     def file_extname
-      File.extname(absolute_path)
+      File.extname(absolute_xml_path)
     end
 
     def file_valid_format?
@@ -30,11 +30,12 @@ module XrechnungXmlValidator
     end
 
     def raise_file_not_found_error
-      raise XrechnungXmlValidator::FileNotFound, "#{absolute_path} not found"
+      raise XrechnungXmlValidator::FileNotFound, "#{absolute_xml_path} not found"
     end
 
     def raise_file_invalid_format_error
-      raise XrechnungXmlValidator::InvalidFileFormat, "#{absolute_path} must have format #{VALID_FORMATS.join(', ')}"
+      raise XrechnungXmlValidator::InvalidFileFormat,
+            "#{absolute_xml_path} must have format #{VALID_FORMATS.join(', ')}"
     end
   end
 end

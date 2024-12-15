@@ -4,11 +4,11 @@ require 'open3'
 
 module XrechnungXmlValidator
   class XmlValidator
-    attr_reader :absolute_path, :output_directory
+    attr_reader :absolute_xml_path, :absolute_output_directory_path
 
-    def initialize(absolute_path:, output_directory:)
-      @absolute_path    = absolute_path
-      @output_directory = output_directory
+    def initialize(absolute_xml_path:, absolute_output_directory_path:)
+      @absolute_xml_path = absolute_xml_path
+      @absolute_output_directory_path = absolute_output_directory_path
     end
 
     def validate_and_create_report!
@@ -28,8 +28,8 @@ module XrechnungXmlValidator
         '-jar', XrechnungXmlValidator::FilePaths.xrechnung_validator_jar,
         '-s',   XrechnungXmlValidator::FilePaths.xrechnung_validator_scenarios,
         '-r',   XrechnungXmlValidator::FilePaths.xrechnung_validator_directory,
-        '-h',   absolute_path,
-        '-o',   output_directory
+        '-h',   absolute_xml_path,
+        '-o',   absolute_output_directory_path
       )
 
       stdout_str
