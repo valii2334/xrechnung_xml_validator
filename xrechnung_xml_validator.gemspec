@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "faker"
   spec.add_development_dependency "pry"
-  spec.add_development_dependency "shellwords"
+  spec.add_development_dependency "open3"
 
   spec.required_ruby_version = Gem::Requirement.new(">= 3.1.0")
 end

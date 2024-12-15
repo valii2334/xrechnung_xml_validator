@@ -2,6 +2,7 @@
 
 require 'bundler/setup'
 require 'faker'
+require 'pry'
 require 'xrechnung_xml_validator'
 
 require 'simplecov'

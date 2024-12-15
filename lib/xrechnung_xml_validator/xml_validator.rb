@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'open3'
+
 module XrechnungXmlValidator
   class XmlValidator
     attr_reader :absolute_path, :output_directory
@@ -21,13 +23,16 @@ module XrechnungXmlValidator
     # h   => xrechnung xml file path
     # o   => output directory for HTML report
     def validation_response
-      `
-        java -jar #{Shellwords.escape(XrechnungXmlValidator::FilePaths.xrechnung_validator_jar)}       \
-             -s   #{Shellwords.escape(XrechnungXmlValidator::FilePaths.xrechnung_validator_scenarios)} \
-             -r   #{Shellwords.escape(XrechnungXmlValidator::FilePaths.xrechnung_validator_directory)} \
-             -h   #{Shellwords.escape(absolute_path)}                                                  \
-             -o   #{Shellwords.escape(output_directory)}
-      `
+      stdout_str, = Open3.capture3(
+        'java',
+        '-jar', XrechnungXmlValidator::FilePaths.xrechnung_validator_jar,
+        '-s',   XrechnungXmlValidator::FilePaths.xrechnung_validator_scenarios,
+        '-r',   XrechnungXmlValidator::FilePaths.xrechnung_validator_directory,
+        '-h',   absolute_path,
+        '-o',   output_directory
+      )
+
+      stdout_str
     end
 
     def raise_xrechnung_error
