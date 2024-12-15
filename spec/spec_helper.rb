@@ -4,6 +4,9 @@ require 'bundler/setup'
 require 'faker'
 require 'xrechnung_xml_validator'
 
+require 'simplecov'
+SimpleCov.start
+
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = '.rspec_status'

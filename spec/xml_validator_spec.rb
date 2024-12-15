@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-require 'pry'
 
 RSpec.describe XrechnungXmlValidator::XmlValidator do
   describe 'validate_and_create_report!' do
