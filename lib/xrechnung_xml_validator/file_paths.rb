@@ -12,7 +12,7 @@ module XrechnungXmlValidator
       end
 
       def xrechnung_validator_jar
-        [XrechnungXmlValidator::FilePaths.pwd, 'xrechnung_validator/validationtool-1.5.0-standalone.jar'].join('/')
+        [XrechnungXmlValidator::FilePaths.pwd, 'xrechnung_validator/validationtool.jar'].join('/')
       end
 
       def xrechnung_validator_scenarios

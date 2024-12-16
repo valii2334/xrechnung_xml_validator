@@ -9,7 +9,7 @@ RSpec.describe XrechnungXmlValidator::FilePaths do
     end
 
     it 'returns xrechnung_validator directory' do
-      expect(Dir.new(subject).children.include?('validationtool-1.5.0-standalone.jar')).to be_truthy
+      expect(Dir.new(subject).children.include?('validationtool.jar')).to be_truthy
     end
   end
 
@@ -19,7 +19,7 @@ RSpec.describe XrechnungXmlValidator::FilePaths do
     end
 
     it 'returns validation jar' do
-      expect(File.basename(subject)).to eq('validationtool-1.5.0-standalone.jar')
+      expect(File.basename(subject)).to eq('validationtool.jar')
     end
   end
 

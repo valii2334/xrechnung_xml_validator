@@ -5,9 +5,6 @@ in order to check that a XRechnung XML file is valid.
 
 At this moment we check against XRechnung 3.0.2 rules released in 2024-10-31.
 
-Only this version is supported because we calculate the SHA256 Checksum of the JAR file
-and we compare it to the saved value from `VALIDATION_JAR_SHA256_CHECKSUM`.
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -30,6 +27,8 @@ Or install it yourself as:
 
 Inside the project create a new directory `xrechnung_validator` and put the content
 from https://github.com/itplr-kosit/validator-configuration-xrechnung/blob/master/docs/usage.md .
+
+Change the name of the validation tool to be run to `validationtool.jar`.
 
 ## Usage
 

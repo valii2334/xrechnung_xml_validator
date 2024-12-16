@@ -21,9 +21,6 @@ RSpec.describe XrechnungXmlValidator::Validate do
     let(:xml_validator_double)  { double('XrechnungXmlValidator::XmlValidator', validate_and_create_report!: true) }
 
     before do
-      allow(XrechnungXmlValidator::JarIntegrityValidator)
-        .to receive(:validate!)
-
       allow(XrechnungXmlValidator::FileValidator)
         .to receive(:new)
         .with(absolute_xml_path:).and_return(file_validator_double)
@@ -35,9 +32,6 @@ RSpec.describe XrechnungXmlValidator::Validate do
     end
 
     it 'calls all validators with the right arguments' do
-      expect(XrechnungXmlValidator::JarIntegrityValidator)
-        .to receive(:validate!)
-
       expect(XrechnungXmlValidator::FileValidator)
         .to receive(:new)
         .with(absolute_xml_path:)
