@@ -2,14 +2,17 @@
 
 require 'xrechnung_xml_validator/version'
 require 'xrechnung_xml_validator/file_paths'
+require 'xrechnung_xml_validator/validations_tools_validator'
 require 'xrechnung_xml_validator/file_validator'
 require 'xrechnung_xml_validator/xml_validator'
 
 module XrechnungXmlValidator
-  class FileNotFound         < StandardError; end
-  class InvalidFileFormat    < StandardError; end
-  class InvalidXrechnung     < StandardError; end
-  class InvalidValidationJar < StandardError; end
+  class FileNotFound          < StandardError; end
+  class ScenariosMissing      < StandardError; end
+  class ValidationtoolMissing < StandardError; end
+  class InvalidFileFormat     < StandardError; end
+  class InvalidXrechnung      < StandardError; end
+  class InvalidValidationJar  < StandardError; end
 
   class Validate
     attr_reader :absolute_xml_path, :absolute_output_directory_path
