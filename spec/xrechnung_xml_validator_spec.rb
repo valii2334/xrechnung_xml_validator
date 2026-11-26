@@ -32,6 +32,9 @@ RSpec.describe XrechnungXmlValidator::Validate do
     end
 
     it 'calls all validators with the right arguments' do
+      expect(XrechnungXmlValidator::ValidationsToolsValidator)
+        .to receive(:new)
+
       expect(XrechnungXmlValidator::FileValidator)
         .to receive(:new)
         .with(absolute_xml_path:)

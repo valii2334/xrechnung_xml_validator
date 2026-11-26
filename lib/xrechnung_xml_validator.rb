@@ -23,6 +23,7 @@ module XrechnungXmlValidator
     end
 
     def run!
+      XrechnungXmlValidator::ValidationsToolsValidator.new.validate!
       XrechnungXmlValidator::FileValidator.new(absolute_xml_path:).validate!
       XrechnungXmlValidator::XmlValidator.new(
         absolute_xml_path:,
