@@ -2,7 +2,6 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <title>Prüfbericht</title>
-      <meta charset="utf-8" />
       <style>
         body {
           font-family: Calibri;
@@ -136,9 +135,9 @@
          <p class="important">Angaben zum geprüften Dokument</p>
          <dl>
             <dt>Referenz:</dt>
-            <dd>/Users/wd/Documents/ruby_gems/xrechnung_xml_validator/spec/support/xmls/valid.xml</dd>
+            <dd>/Users/wd/Documents/personal_projects/xrechnung_xml_validator/spec/support/xmls/valid.xml</dd>
             <dt>Zeitpunkt der Prüfung:</dt>
-            <dd>16.12.2024 9:31:38</dd>
+            <dd>26.11.2026 10:26:35</dd>
             <dt>Erkannter Dokumenttyp:</dt>
             <dd>EN16931 XRechnung (UBL Invoice)</dd>
          </dl>
@@ -153,6 +152,67 @@
       </div>
       <p class="important"><b>Konformitätsprüfung: </b>Das geprüfte Dokument enthält weder Fehler noch Warnungen. Es ist konform zu den formalen
          Vorgaben.</p>
+      <p>Übersicht der Validierungsergebnisse:</p>
+      <table class="tbl-errors">
+         <thead>
+            <tr>
+               <th>Prüfschritt</th>
+               <th>Fehler</th>
+               <th>Warnungen</th>
+               <th>Informationen</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>XML Schema for UBL 2.1 Invoice (val-xsd)</td>
+               <td style="width: 30mm;">0</td>
+               <td style="width: 30mm;">0</td>
+               <td style="width: 30mm;">0</td>
+            </tr>
+            <tr>
+               <td>Schematron rules for EN16931 (UBL) (val-sch.1)</td>
+               <td style="width: 30mm;">0</td>
+               <td style="width: 30mm;">0</td>
+               <td style="width: 30mm;">0</td>
+            </tr>
+            <tr>
+               <td>Schematron rules for Invoice - CIUS XRechnung (UBL) (val-sch.2)</td>
+               <td style="width: 30mm;">0</td>
+               <td style="width: 30mm;">0</td>
+               <td style="width: 30mm;">1</td>
+            </tr>
+            <tr>
+               <td> (val-xml)</td>
+               <td style="width: 30mm;">0</td>
+               <td style="width: 30mm;">0</td>
+               <td style="width: 30mm;">0</td>
+            </tr>
+         </tbody>
+      </table>
+      <p>Validierungsergebnisse im Detail:</p>
+      <table class="tbl-errors">
+         <thead>
+            <tr>
+               <th style="width: 30mm;">Pos</th>
+               <th style="width: 25mm;">Code</th>
+               <th style="width: 25mm;">Adj. Grad</th>
+               <th>Text</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr class="information">
+               <td rowspan="2">val-sch.2.1</td>
+               <td rowspan="2">BR-DE-TMP-32</td>
+               <td rowspan="2">information</td>
+               <td>[BR-DE-TMP-32] Eine Rechnung sollte zur Angabe des Liefer-/Leistungsdatums entweder
+                  BT-72 "Actual delivery date", BG-14 "Invoicing period" oder in jeder Rechnungsposition
+                  BG-26 "Invoice line period" enthalten.</td>
+            </tr>
+            <tr class="information">
+               <td>Pfad: /Q{urn:oasis:names:specification:ubl:schema:xsd:Invoice-2}Invoice[1]</td>
+            </tr>
+         </tbody>
+      </table>
       <p class="important">Bewertung: Es wird empfohlen das Dokument anzunehmen und weiter zu verarbeiten.</p>
       <p class="important">Inhalt des Rechnungsdokuments:</p>
       <table class="document">
@@ -1036,6 +1096,6 @@
             </td>
          </tr>
       </table>
-      <p class="info">Dieser Prüfbericht wurde erstellt mit KoSIT Validator 1.5.0.</p>
+      <p class="info">Dieser Prüfbericht wurde erstellt mit KoSIT Validator 1.6.3.</p>
    </body>
 </html>

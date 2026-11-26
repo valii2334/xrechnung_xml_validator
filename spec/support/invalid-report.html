@@ -2,7 +2,6 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <title>Prüfbericht</title>
-      <meta charset="utf-8" />
       <style>
         body {
           font-family: Calibri;
@@ -136,9 +135,9 @@
          <p class="important">Angaben zum geprüften Dokument</p>
          <dl>
             <dt>Referenz:</dt>
-            <dd>/Users/wd/Documents/ruby_gems/xrechnung_xml_validator/spec/support/xmls/invalid.xml</dd>
+            <dd>/Users/wd/Documents/personal_projects/xrechnung_xml_validator/spec/support/xmls/invalid.xml</dd>
             <dt>Zeitpunkt der Prüfung:</dt>
-            <dd>16.12.2024 9:31:48</dd>
+            <dd>26.11.2026 10:26:47</dd>
             <dt>Erkannter Dokumenttyp:</dt>
             <dd>EN16931 XRechnung (UBL Invoice)</dd>
          </dl>
@@ -179,7 +178,7 @@
                <td>Schematron rules for Invoice - CIUS XRechnung (UBL) (val-sch.2)</td>
                <td style="width: 30mm;">1</td>
                <td style="width: 30mm;">0</td>
-               <td style="width: 30mm;">0</td>
+               <td style="width: 30mm;">1</td>
             </tr>
             <tr>
                <td> (val-xml)</td>
@@ -204,10 +203,21 @@
                <td rowspan="2">val-sch.2.1</td>
                <td rowspan="2">PEPPOL-EN16931-R008</td>
                <td rowspan="2">error</td>
-               <td>Document MUST not contain empty elements.</td>
+               <td>[PEPPOL-EN16931-R008]-Document MUST not contain empty elements.</td>
             </tr>
             <tr class="error">
-               <td>Pfad: /ubl:Invoice/cac:AccountingSupplierParty[1]/cac:Party[1]/cbc:EndpointID[1]</td>
+               <td>Pfad: /Q{urn:oasis:names:specification:ubl:schema:xsd:Invoice-2}Invoice[1]/Q{urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2}AccountingSupplierParty[1]/Q{urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2}Party[1]/Q{urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2}EndpointID[1]</td>
+            </tr>
+            <tr class="information">
+               <td rowspan="2">val-sch.2.2</td>
+               <td rowspan="2">BR-DE-TMP-32</td>
+               <td rowspan="2">information</td>
+               <td>[BR-DE-TMP-32] Eine Rechnung sollte zur Angabe des Liefer-/Leistungsdatums entweder
+                  BT-72 "Actual delivery date", BG-14 "Invoicing period" oder in jeder Rechnungsposition
+                  BG-26 "Invoice line period" enthalten.</td>
+            </tr>
+            <tr class="information">
+               <td>Pfad: /Q{urn:oasis:names:specification:ubl:schema:xsd:Invoice-2}Invoice[1]</td>
             </tr>
          </tbody>
       </table>
@@ -1093,6 +1103,6 @@
             </td>
          </tr>
       </table>
-      <p class="info">Dieser Prüfbericht wurde erstellt mit KoSIT Validator 1.5.0.</p>
+      <p class="info">Dieser Prüfbericht wurde erstellt mit KoSIT Validator 1.6.3.</p>
    </body>
 </html>
